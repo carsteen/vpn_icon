@@ -12,7 +12,7 @@ from gi.repository import Gtk as gtk
 gi.require_version('AppIndicator3', '0.1')
 from gi.repository import AppIndicator3 as appindicator
 
-OPENVPN_CONF='/home/ysance.local/r.carmona-hagelsteen/.config/vpn/ys-fw001-UDP4-1194-raphael.carmona-hagelsteen.ovpn'
+OPENVPN_CONF=os.getenv('OPENVPN_CONF_FILE')
 
 '''
 Icon UI
@@ -29,8 +29,8 @@ def menu():
 	print('define menu')
 	menu = gtk.Menu()
 	
-	print('instantiate process manager')
-	vpn_process = VpnControler()
+	print('instantiate process controller')
+	vpn_process = VpnController()
 	
 	activate_cmd = gtk.MenuItem('Activate')
 	activate_cmd.connect('activate', vpn_process.activate)
@@ -45,12 +45,12 @@ def menu():
 	menu.append(status_cmd)
 	
 	separator = gtk.SeparatorMenuItem()
-      menu.append(separator)
-        
+	menu.append(separator)
+	
 	exittray = gtk.MenuItem('Quit')
 	exittray.connect('activate', quit)
-	menu.append(exittray)	
-
+	menu.append(exittray)
+	
 	menu.show_all()
 	return menu
 	
@@ -61,7 +61,7 @@ def quit(_):
 '''
 Process Management
 '''	
-class VpnControler:
+class VpnController:
 	def __init__(self):
 
 		self.activate_cmd = 'pkexec openvpn --config {}'.format(OPENVPN_CONF)
@@ -69,7 +69,7 @@ class VpnControler:
 		
 	def activate(self, _):
 		try:
-			self.process = subprocess.Popen(self.activate_cmd, shell=True, start_new_session=True, stderr=subprocess.STDOUT, universal_newlines=True)		
+			self.process = subprocess.Popen(self.activate_cmd, shell=True, start_new_session=True, stderr=subprocess.STDOUT, universal_newlines=True)
 			print('pid: ', self.process.pid)
 			
 		except SubprocessError as e:
@@ -82,8 +82,14 @@ class VpnControler:
 		print(self.process.poll())
 
 	def status(self, _):
-		print('pid : ', self.process.pid)
-		print('exit status (None if still running) : ' , self.process.poll())
+		if self.process:
+			print('vpn process pid : ', self.process.pid)
+			if self.process.poll():
+				print('vpn deactivated with exit status ' , self.process.poll())
+			else:
+				print('still running')
+		else: 
+			print('No vpn process running')
 
 	
 if __name__ == "__main__":
