@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#coding: utf-8
 
 import os
 import subprocess 
@@ -7,10 +8,9 @@ import sys
 
 import gi
 gi.require_version('Gtk', '3.0')
-#gi.require_version('AppIndicator3', '3.0')
-from gi.repository import Gtk as gtk, AppIndicator3 as appindicator
-print(gtk.init_check(sys.argv))
-print(os.environ['DISPLAY'])
+from gi.repository import Gtk as gtk
+gi.require_version('AppIndicator3', '0.1')
+from gi.repository import AppIndicator3 as appindicator
 
 OPENVPN_CONF='/home/ysance.local/r.carmona-hagelsteen/.config/vpn/ys-fw001-UDP4-1194-raphael.carmona-hagelsteen.ovpn'
 
@@ -30,7 +30,7 @@ def menu():
 	menu = gtk.Menu()
 	
 	print('instantiate process manager')
-	vpn_process = VpnProcess()
+	vpn_process = VpnControler()
 	
 	activate_cmd = gtk.MenuItem('Activate')
 	activate_cmd.connect('activate', vpn_process.activate)
@@ -44,6 +44,9 @@ def menu():
 	status_cmd.connect('activate', vpn_process.status)
 	menu.append(status_cmd)
 	
+	separator = gtk.SeparatorMenuItem()
+      menu.append(separator)
+        
 	exittray = gtk.MenuItem('Quit')
 	exittray.connect('activate', quit)
 	menu.append(exittray)	
@@ -58,7 +61,7 @@ def quit(_):
 '''
 Process Management
 '''	
-class VpnProcess:
+class VpnControler:
 	def __init__(self):
 
 		self.activate_cmd = 'pkexec openvpn --config {}'.format(OPENVPN_CONF)

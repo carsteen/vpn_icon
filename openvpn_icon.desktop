@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Openvpn Icon
+Comment=Simple tray icon to start/stop openvpn
+Exec=/home/ysance.local/r.carmona-hagelsteen/projects/vpn_icon/openvpn_icon.py
+X-GNOME-Autostart-enabled=true
