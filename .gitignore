@@ -2,3 +2,7 @@ journal
 
 *.pyc
 *.deb
+
+dist/*
+build/*
+openvpn_switch.egg-info/*

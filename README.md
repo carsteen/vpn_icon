@@ -1,10 +1,11 @@
 Simple tray icon for openvpn
 
-# installation 
+*installation*
 
 ```
 export OPENVPN_CONF_FILE=/path/to/yourconf.ovpn
 ```
+for Gtk dependencies : https://pygobject.readthedocs.io/en/latest/getting_started.html
 
 *todo*
 - :heavy_check_mark: icon creation/design
