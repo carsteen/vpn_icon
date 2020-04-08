@@ -10,5 +10,6 @@ setup(name = "openvpn-switch",
 	url='https://github.com/carsteen/vpn_icon',
 	py_modules = ['openvpn_icon'],
 	python_requires='>=3.5',
-	install_requires=['pygobject>=3.20.0']
+	install_requires=['pygobject>=3.20.0'],
+	package_data={"desktop": ["*.desktop"]}
 	)

@@ -12,7 +12,7 @@ from gi.repository import Gtk as gtk
 gi.require_version('AppIndicator3', '0.1')
 from gi.repository import AppIndicator3 as appindicator
 
-OPENVPN_CONF=os.getenv('OPENVPN_CONF_FILE')
+#OPENVPN_CONF=os.getenv('OPENVPN_CONF_FILE')
 
 '''
 Icon UI
@@ -82,16 +82,18 @@ class VpnController:
 		print(self.process.poll())
 
 	def status(self, _):
-		if self.process:
+		try:
 			print('vpn process pid : ', self.process.pid)
 			if self.process.poll():
 				print('vpn deactivated with exit status ' , self.process.poll())
 			else:
 				print('still running')
-		else: 
+		except AttributeError: 
 			print('No vpn process running')
 
 	
 if __name__ == "__main__":
+	OPENVPN_CONF = sys.argv[1]
+
 	signal.signal(signal.SIGINT, signal.SIG_DFL)
 	main()
