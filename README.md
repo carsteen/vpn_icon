@@ -2,15 +2,24 @@
 
 Rely on openvpn CLI and Gtk.
 
-**installation**
+*installation*
 
 Install via pip, only python3 is supported :
 ```
 python3 -m pip install git+https://github.com/carsteen/vpn_icon
 ```
-for Gtk dependencies see https://pygobject.readthedocs.io/en/latest/getting_started.html
 
-**Run the app**
+Dependencies (ubuntu):
+```
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0
+```
+sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0
+
+```
+from Gtk dependencies see https://pygobject.readthedocs.io/en/latest/getting_started.html
+
+
+*Run the app*
 
 ```
 python3 -m openvpn_icon /path/to/your/conf.ovpn
@@ -20,7 +29,8 @@ Your ovpn conf file should only contains absolute paths.
 
 *credits*
 
-openvpn_icon https://openvpn.net/
+openvpn_icon https://openvpn.net/  
+
 Gtk https://www.gtk.org/
 
 *todo*
