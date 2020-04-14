@@ -8,8 +8,6 @@ setup(name = "openvpn-switch",
 	author = "Raphael Carmona-Hagelsteen",
 	author_email = "uncorporation@gmail.com",
 	url='https://github.com/carsteen/vpn_icon',
-	py_modules = ['openvpn_icon'],
-	python_requires='>=3.5',
-	install_requires=['pygobject>=3.20.0'],
-	package_data={"desktop": ["*.desktop"]}
+	scripts = ['openvpn_icon.py'],
+	package_data={"data": ["*.desktop"]}
 	)

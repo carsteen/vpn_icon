@@ -6,3 +6,9 @@ journal
 dist/*
 build/*
 openvpn_switch.egg-info/*
+.pybuild/
+
+debian/files
+debian/debhelper-build-stamp
+debian/openvpn*
+debian/openvpn-switch/
