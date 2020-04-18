@@ -1,13 +1,6 @@
-openvpn-switch (0.1.2) UNRELEASED; urgency=low
+openvpn-icon (0.1.0) UNRELEASED; urgency=medium
 
-  * New xx
-
- -- Raphael.CARMONA-HAGELSTEEN <uncorporation@gmail.com>  Mon, 14 Apr 2020 17:05:05 +0200
- 
-openvpn-switch (0.1.1) UNRELEASED; urgency=low
-
-  * Initial release
-  * bla
+  * Basic implementation of ui and process management
 
  -- Raphael.CARMONA-HAGELSTEEN <uncorporation@gmail.com>  Mon, 13 Apr 2020 16:05:05 +0200
 

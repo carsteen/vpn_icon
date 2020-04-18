@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Openvpn switch 
+Comment=Simple tray icon to start/stop openvpn based on config file
+Exec=openvpn-icon /path/to/conf
+# X-GNOME-Autostart-enabled=false

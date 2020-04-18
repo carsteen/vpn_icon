@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Openvpn Icon
-Comment=Simple tray icon to start/stop openvpn
-Exec=openvpn_icon
-X-GNOME-Autostart-enabled=true

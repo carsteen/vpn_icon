@@ -2,12 +2,16 @@
 
 from setuptools import setup
 
-setup(name = "openvpn-switch",
+data_files = [
+	('share/applications', ['data/desktop/openvpn-icon.desktop']),
+	('share/icons/ubuntu-mono-dark/status/22/openvpn-icon-panel.svg', ['data/icons/ubuntu-mono-dark/status/22/openvpn-icon-panel.svg'])]
+
+setup(name = "openvpn-icon",
 	version = "0.1.0",
 	description = "Simple tray icon for controlling openvpn CLI",
 	author = "Raphael Carmona-Hagelsteen",
 	author_email = "uncorporation@gmail.com",
 	url='https://github.com/carsteen/vpn_icon',
-	scripts = ['openvpn_icon.py'],
-	package_data={"data": ["*.desktop"]}
+	scripts = ['openvpn-icon'],
+	data_files=data_files
 	)

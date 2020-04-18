@@ -1,4 +1,4 @@
-source: openvpn-switch
+source: openvpn-icon
 Section: utils
 Priority: optional
 Maintainer: Raphael Carmona Hagelsteen <uncorporation@gmail.com>
@@ -7,8 +7,8 @@ Build-Depends: debhelper (>=7), dh-python, python3,
 X-Python3-Version: >=3.5
 Standards-Version: 3.8.0
 
-Package: openvpn-switch
+Package: openvpn-icon
 Architecture: all
 Multi-Arch: foreign
-Depends: ${python3:Depends}, python3-gi, python3-gi-cairo, gir1.2-gtk-3.0
-Description: Simple tray icon for controlling openvpn CLI
+Depends: ${python3:Depends}, python3-gi, python3-gi-cairo, gir1.2-gtk-3.0, policykit-1, gir1.2-appindicator3-0.1
+Description: Simple tray icon for controlling openvpn CLI based on .ovpn conf file.
