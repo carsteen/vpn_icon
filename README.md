@@ -1,6 +1,6 @@
 ### openvpn-icon
 
-Simple tray icon for openvpn allowing to activate and deactivate vpn conection. Rely on openvpn cli and Gtk.
+Simple ubuntu tray icon for openvpn allowing to activate and deactivate vpn conection. It Relies on openvpn cli and Gtk.
 
 *installation*
 
@@ -12,12 +12,13 @@ download package
 dpkg -i <openvpn-icon.deb> 
 ```
 
-Install dependencies if needed with 
+Install dependencies with 
+
 ```
 apt install -f
 ```
 
-Run the app
+Run the app providing your .ovpn config file.
 
 ```
 openvpn-icon /path/to/your/conf.ovpn

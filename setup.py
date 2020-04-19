@@ -4,7 +4,7 @@ from setuptools import setup
 
 data_files = [
 	('share/applications', ['data/desktop/openvpn-icon.desktop']),
-	('share/icons/ubuntu-mono-dark/status/22/openvpn-icon-panel.svg', ['data/icons/ubuntu-mono-dark/status/22/openvpn-icon-panel.svg'])]
+	('share/icons/ubuntu-mono-dark/status/16', ['data/icons/ubuntu-mono-dark/status/16/openvpn-icon-panel.svg'])]
 
 setup(name = "openvpn-icon",
 	version = "0.1.0",

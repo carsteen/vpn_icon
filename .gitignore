@@ -5,7 +5,7 @@ journal
 
 dist/*
 build/*
-openvpn_switch.egg-info/*
+openvpn_icon.egg-info/*
 .pybuild/
 
 debian/files
