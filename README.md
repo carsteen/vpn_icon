@@ -1,4 +1,4 @@
-## `openvpn-icon`
+## openvpn-icon
 
 Simple Ubuntu tray icon for activating and deactivating vpn conection with openvpn. Relies on openvpn cli and Gtk.
 
@@ -26,6 +26,23 @@ Run the app providing your .ovpn config file.
 
 ```
 openvpn-icon /path/to/your/conf.ovpn
+```
+
+### Make it launch at startup
+
+Once installed, change path/to/conf in
+```
+sudo gedit /usr/share/applications/openvpn-icon.desktop
+```
+
+Copy to user applications 
+```
+sudo cp /usr/share/applications/openvpn-icon.desktop ~/.local/share/applications/
+```
+
+uncomment that line in ~/.local/share/applications/openvpn-icon.desktop
+```
+# X-GNOME-Autostart-enabled=false
 ```
 
 ### Credits
