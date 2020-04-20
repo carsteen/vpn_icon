@@ -96,8 +96,8 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('conf', nargs=1, help='Path of openvpn .ovpn conf file. Inside file, absolute paths are required')
 	  
-	OPENVPN_CONF = parser.parse_args() 
-
+	OPENVPN_CONF = parser.parse_args().conf[0] 
+		
 	signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 	main()
