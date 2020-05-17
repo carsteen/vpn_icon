@@ -1,0 +1,15 @@
+[Unit]
+Description=openvpn tray icon
+
+[Service]
+Type=simple
+Environment="DISPLAY=:0" 
+Environment="XDG_CURRENT_DESKTOP=Unity"
+#RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /home/ysance.local/r.carmona-hagelsteen/projects/vpn_icon/vpn_icon.py start
+ExecStop=/home/ysance.local/r.carmona-hagelsteen/projects/vpn_icon/vpn_icon.py stop
+Restart=always
+#User=r.carmona-hagelsteen
+
+[Install]
+WantedBy=multi-user.target

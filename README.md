@@ -22,7 +22,7 @@ apt install -f
 
 ### Use
 
-Run the app providing your .ovpn config file.
+Run the app providing your .ovpn config file (be sure you have set relative paths inside youf conf file).
 
 ```
 openvpn-icon /path/to/your/conf.ovpn
@@ -35,7 +35,7 @@ Once installed, change path/to/conf in
 sudo gedit /usr/share/applications/openvpn-icon.desktop
 ```
 
-Copy to user applications 
+Copy to user applications folder
 ```
 sudo cp /usr/share/applications/openvpn-icon.desktop ~/.local/share/applications/
 ```
